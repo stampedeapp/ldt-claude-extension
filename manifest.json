@@ -1,0 +1,66 @@
+{
+  "dxt_version": "0.1",
+  "name": "ldt-claude-extension",
+  "display_name": "Let's Do This MCP",
+  "version": "1.0.0",
+  "description": "Connect Claude to the Let's Do This MCP to manage your events and participants with AI",
+  "long_description": "The Let's Do This MCP extension enables you to manage events and participants using Claude. An API key is required to connect to enable this integration, pl please contact your account manager to to get o one.",
+  "author": {
+    "name": "Let's Do This",
+    "email": "hello@letsdothis.com",
+    "url": "https://www.letsdothis.com"
+  },
+  "homepage": "https://www.letsdothis.com",
+  "support": "https://help.letsdothis.com",
+  "icon": "./icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "",
+    "mcp_config": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcpservice.mcp.prod.letsdothis.cloud/mcp",
+        "--header",
+        "Authorization:${TOKEN}"
+      ],
+      "env": {
+        "TOKEN": "Bearer ${user_config.api_key}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "get-bookings",
+      "description": "Fetch a booking by its ID"
+    },
+    {
+      "name": "search-startlist-entries",
+      "description": "Search startlist entries by participant details, including email address, event IDs, participant IDs, etc."
+    },
+    {
+      "name": "search-users",
+      "description": "Search users by email addresses or IDs"
+    }
+  ],
+  "tools_generated": true,
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "User API Key",
+      "description": "A personal API key for your Let's Do This account",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "keywords": [
+    "lets-do-this",
+    "marketplace",
+    "triathlon",
+    "running",
+    "cycling",
+    "swimming"
+  ],
+  "license": "None"
+}
