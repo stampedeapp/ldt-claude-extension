@@ -15,7 +15,7 @@
   "icon": "icon.png",
   "server": {
     "type": "node",
-    "entry_point": "node_modules/.bin/mcp-remote",
+    "entry_point": "node_modules/mcp-remote/dist/proxy.js",
     "mcp_config": {
       "command": "node",
       "args": [
