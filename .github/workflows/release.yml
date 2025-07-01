@@ -1,0 +1,32 @@
+name: Release Extension
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version-file: .nvmrc
+
+      - name: Pack extension
+        id: pack
+        run: |
+          npx @anthropic-ai/dxt pack
+          echo "filename=$(ls *.dxt)" >> $GITHUB_OUTPUT
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./${{ steps.pack.outputs.filename }}
+          asset_name: ${{ steps.pack.outputs.filename }}
+          asset_content_type: application/zip
