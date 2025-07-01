@@ -12,7 +12,7 @@
   },
   "homepage": "https://www.letsdothis.com",
   "support": "https://help.letsdothis.com",
-  "icon": "./icon.png",
+  "icon": "icon.png",
   "server": {
     "type": "node",
     "entry_point": "",
