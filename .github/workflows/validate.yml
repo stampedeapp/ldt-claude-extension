@@ -17,4 +17,7 @@ jobs:
           node-version-file: .nvmrc
 
       - name: Validate extension
+        run: npx @anthropic-ai/dxt@latest validate ./manifest.json
+
+      - name: Check packability
         run: npx @anthropic-ai/dxt@latest pack

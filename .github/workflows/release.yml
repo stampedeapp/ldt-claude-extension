@@ -19,7 +19,7 @@ jobs:
       - name: Pack extension
         id: pack
         run: |
-          npx @anthropic-ai/dxt pack
+          npx @anthropic-ai/dxt@latest pack
           echo "filename=$(ls *.dxt)" >> $GITHUB_OUTPUT
 
       - name: Upload Release Asset
