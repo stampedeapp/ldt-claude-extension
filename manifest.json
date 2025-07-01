@@ -2,7 +2,7 @@
   "dxt_version": "0.1",
   "name": "ldt-claude-extension",
   "display_name": "Let's Do This MCP",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connect Claude to the Let's Do This MCP to manage your events and participants with AI",
   "long_description": "The Let's Do This MCP extension enables you to manage events and participants using Claude. An API key is required to connect to enable this integration, pl please contact your account manager to to get o one.",
   "author": {
