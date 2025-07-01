@@ -1,0 +1,22 @@
+{
+  "name": "ldt-claude-extension",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "![Let's Do This](./icon.png)",
+  "main": "src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stampedeapp/ldt-claude-extension.git"
+  },
+  "keywords": [],
+  "author": "stampedeapp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stampedeapp/ldt-claude-extension/issues"
+  },
+  "homepage": "https://github.com/stampedeapp/ldt-claude-extension#readme",
+  "dependencies": {
+    "mcp-remote": "^0.1.17"
+  }
+}

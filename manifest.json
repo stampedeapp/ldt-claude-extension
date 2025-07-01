@@ -15,13 +15,13 @@
   "icon": "icon.png",
   "server": {
     "type": "node",
-    "entry_point": "",
+    "entry_point": "node_modules/mcp-remote/dist/proxy.js",
     "mcp_config": {
-      "command": "npx",
+      "command": "node",
       "args": [
-        "-y",
-        "mcp-remote",
+        "${__dirname}/node_modules/mcp-remote/dist/proxy.js",
         "https://mcpservice.mcp.prod.letsdothis.cloud/mcp",
+        "--transport http-only",
         "--header",
         "Authorization:${TOKEN}"
       ],
